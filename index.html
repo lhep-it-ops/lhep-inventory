@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LHEP Hardware Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="app" style="display:none;">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="searchDevices()">Search</button>
+        </div>
+        
+        <table id="inventoryTable">
+            <!-- Table content populated by JS -->
+        </table>
+        
+        <button onclick="showAddForm()">Add Device</button>
+        
+        <!-- Edit/Add Form -->
+        <div id="deviceForm" style="display:none;">
+            <!-- Form fields for all device properties -->
+            <input type="text" id="host_name" placeholder="Host Name">
+            <!-- Add similar inputs for all fields -->
+            <button onclick="saveDevice()">Save</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
