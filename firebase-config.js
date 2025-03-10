@@ -1,8 +1,8 @@
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT",
-    storageBucket: "YOUR_PROJECT.appspot.com",
+    apiKey: "AIzaSyDxLWAQqGbCv-YmMRKkQukfptTtHg89q7o",
+    authDomain: "inventory-db-lhep.firebaseapp.com",
+    projectId: "inventory-db-lhep",
+    storageBucket: "inventory-db-lhep.appspot.com",
     messagingSenderId: "123456789",
     appId: "APP_ID"
 };
