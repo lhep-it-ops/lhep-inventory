@@ -78,6 +78,22 @@ function searchDevices() {
   renderTable(filteredDevices);
 }
 
+function handleOrdering() {
+    const orderField = document.getElementById('orderField').value;
+    orderDevices(orderField);
+}
+
+function orderDevices(field) {
+    // Use localeCompare for string fields; adjust for numbers if needed
+    deviceList.sort((a, b) => {
+        const aField = a[field] ? a[field].toString().toLowerCase() : "";
+        const bField = b[field] ? b[field].toString().toLowerCase() : "";
+        return aField.localeCompare(bField);
+    });
+    renderTable(deviceList);
+}
+
+
 // --- Form Handling for Add/Edit ---
 function showAddForm() {
   currentDeviceId = null;

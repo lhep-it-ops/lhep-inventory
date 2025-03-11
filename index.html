@@ -22,6 +22,21 @@
             <input type="text" id="searchInput" placeholder="Search...">
             <button onclick="searchDevices()">Search</button>
         </div>
+
+        <div class="order">
+            <label for="orderField">Order by:</label>
+            <select id="orderField">
+                <option value="host_name">Host Name</option>
+                <option value="ip">IP Address</option>
+                <option value="inventory_num">Inventory Number</option>
+                <option value="room">Room Location</option>
+                <option value="ref_person">Reference Person</option>
+                <option value="manufacturer">Manufacturer</option>
+                <option value="status">Device Status</option>
+            </select>
+            <button type="button" onclick="handleOrdering()">Order Devices</button>
+        </div>
+        
         
         <table id="inventoryTable">
             <!-- Table content populated by JS -->
