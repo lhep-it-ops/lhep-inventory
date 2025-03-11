@@ -28,14 +28,47 @@
         
         <button onclick="showAddForm()">Add Device</button>
         
-        <!-- Edit/Add Form -->
-        <div id="deviceForm" style="display:none;">
-            <!-- Form fields for all device properties -->
-            <input type="text" id="host_name" placeholder="Host Name">
-            <!-- Add similar inputs for all fields -->
-            <button onclick="saveDevice()">Save</button>
-        </div>
+    <!-- Edit/Add Form -->
+    <div id="deviceForm" style="display:none;">
+        <label for="host_name">Host Name:</label>
+        <input type="text" id="host_name" placeholder="Host Name">
+        
+        <label for="ip">IP Address:</label>
+        <input type="text" id="ip" placeholder="IP Address">
+        
+        <label for="MAC">MAC Address:</label>
+        <input type="text" id="MAC" placeholder="MAC Address">
+        
+        <label for="inventory_num">Inventory Number:</label>
+        <input type="text" id="inventory_num" placeholder="Inventory Number">
+        
+        <label for="room">Room:</label>
+        <input type="text" id="room" placeholder="Room">
+        
+        <label for="ref_person">Reference Person:</label>
+        <input type="text" id="ref_person" placeholder="Reference Person">
+        
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer" placeholder="Manufacturer">
+        
+        <label for="model">Model:</label>
+        <input type="text" id="model" placeholder="Model">
+        
+        <label for="OS">OS:</label>
+        <input type="text" id="OS" placeholder="Operating System">
+        
+        <label for="purchase_date">Purchase Date:</label>
+        <input type="date" id="purchase_date">
+        
+        <label for="last_check">Last Check:</label>
+        <input type="date" id="last_check">
+        
+        <label for="note">Note:</label>
+        <textarea id="note" placeholder="Additional notes"></textarea>
+        
+        <button type="button" onclick="saveDevice()">Save</button>
     </div>
+
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>

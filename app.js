@@ -88,14 +88,17 @@ function showAddForm() {
 }
 
 function editDevice(id) {
-  currentDeviceId = id;
-  const device = deviceList.find(d => d.id === id);
-  if (device) {
-    Object.keys(deviceTemplate).forEach(field => {
-      document.getElementById(field).value = device[field] || '';
-    });
-    document.getElementById('deviceForm').style.display = 'block';
-  }
+    currentDeviceId = id;
+    const device = deviceList.find(d => d.id === id);
+    if (device) {
+        Object.keys(deviceTemplate).forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.value = device[field] || '';
+            }
+        });
+        document.getElementById('deviceForm').style.display = 'block';
+    }
 }
 
 function saveDevice() {
