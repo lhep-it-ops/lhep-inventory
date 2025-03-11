@@ -10,6 +10,7 @@ const deviceTemplate = {
   manufacturer: "",
   model: "",
   OS: "",
+  status: "",
   purchase_date: "",
   last_check: "",
   note: ""
