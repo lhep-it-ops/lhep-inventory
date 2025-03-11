@@ -97,6 +97,20 @@
     color: #fff;
   }
   
+  #auth-container,
+  #deviceForm,
+  .search,
+  .order {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 20px auto;      /* Centers the container horizontally */
+    width: 400px;           /* Fixed width; use max-width if you want slight responsiveness */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+
+
   /* Alternate row coloring for better readability */
   tr:nth-child(even) {
     background-color: #f2f2f2;
