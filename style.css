@@ -1,0 +1,115 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base styles */
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Header styling for a professional look */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Input and select field styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  textarea,
+  select {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Label styling */
+  label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    display: block;
+  }
+  
+  /* Container styling for forms and search sections */
+  #auth-container,
+  #deviceForm,
+  .search,
+  .order {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Table styling for the inventory display */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  /* Alternate row coloring for better readability */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    
+    header {
+      flex-direction: column;
+    }
+  }
+  
