@@ -59,13 +59,25 @@ function renderTable(devices) {
   devices.forEach(device => {
     const row = table.insertRow();
     Object.keys(deviceTemplate).forEach(field => {
-      row.insertCell().textContent = device[field] || '';
+      const cell = row.insertCell();
+      const value = device[field];
+
+      // 🔧 Format Firestore Timestamps
+      if (value && typeof value === 'object' && value.seconds !== undefined) {
+        const date = new Date(value.seconds * 1000);
+        cell.textContent = date.toISOString().split('T')[0]; // e.g., 2024-10-17
+      } else {
+        cell.textContent = value || '';
+      }
     });
+
     const actionCell = row.insertCell();
     actionCell.innerHTML = `<button onclick="editDevice('${device.id}')">Edit</button>
                             <button onclick="deleteDevice('${device.id}')">Delete</button>`;
   });
 }
+
+
 
 // --- Search Functionality (Client-Side Filtering) ---
 function searchDevices() {
