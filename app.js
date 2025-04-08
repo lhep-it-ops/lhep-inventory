@@ -96,13 +96,21 @@ function handleOrdering() {
 }
 
 function orderDevices(field) {
-    // Use localeCompare for string fields; adjust for numbers if needed
-    deviceList.sort((a, b) => {
-        const aField = a[field] ? a[field].toString().toLowerCase() : "";
-        const bField = b[field] ? b[field].toString().toLowerCase() : "";
-        return aField.localeCompare(bField);
-    });
-    renderTable(deviceList);
+  deviceList.sort((a, b) => {
+      const aField = a[field];
+      const bField = b[field];
+
+      const isEmptyA = aField === undefined || aField === null || aField === '';
+      const isEmptyB = bField === undefined || bField === null || bField === '';
+
+      if (isEmptyA && !isEmptyB) return 1;   // A is empty → push down
+      if (!isEmptyA && isEmptyB) return -1;  // B is empty → B goes down
+      if (isEmptyA && isEmptyB) return 0;    // both empty
+
+      return aField.toString().toLowerCase().localeCompare(bField.toString().toLowerCase());
+  });
+
+  renderTable(deviceList);
 }
 
 
