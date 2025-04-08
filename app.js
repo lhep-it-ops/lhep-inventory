@@ -103,10 +103,19 @@ function orderDevices(field) {
       const isEmptyA = aField === undefined || aField === null || aField === '';
       const isEmptyB = bField === undefined || bField === null || bField === '';
 
-      if (isEmptyA && !isEmptyB) return 1;   // A is empty → push down
-      if (!isEmptyA && isEmptyB) return -1;  // B is empty → B goes down
-      if (isEmptyA && isEmptyB) return 0;    // both empty
+      if (isEmptyA && !isEmptyB) return 1;
+      if (!isEmptyA && isEmptyB) return -1;
+      if (isEmptyA && isEmptyB) return 0;
 
+      // If the field looks like a Firebase timestamp object
+      const isTimestampA = typeof aField === 'object' && aField.seconds !== undefined;
+      const isTimestampB = typeof bField === 'object' && bField.seconds !== undefined;
+
+      if (isTimestampA && isTimestampB) {
+          return aField.seconds - bField.seconds;
+      }
+
+      // Fallback to string comparison
       return aField.toString().toLowerCase().localeCompare(bField.toString().toLowerCase());
   });
 
