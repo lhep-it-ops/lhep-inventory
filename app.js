@@ -112,7 +112,8 @@ function orderDevices(field) {
       const isTimestampB = typeof bField === 'object' && bField.seconds !== undefined;
 
       if (isTimestampA && isTimestampB) {
-          return aField.seconds - bField.seconds;
+          // Descending: newer date first
+          return bField.seconds - aField.seconds;      
       }
 
       // Fallback to string comparison
